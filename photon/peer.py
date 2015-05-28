@@ -33,7 +33,7 @@ class PhotonPeer:
     def connect(self, host, port, app_id=None):
         with self.dispatch_lock:
             with self.send_lock:
-                self.basePeer.connect(host, port, app_id)
+                return self.basePeer.connect(host, port, app_id)
 
     def disconnect(self):
         with self.dispatch_lock:
